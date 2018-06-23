@@ -5,6 +5,7 @@ const hbs = require('hbs');
 const config = require('./config/config');
 
 let app = express();
+const port = process.env.PORT || config.app.port;
 
 hbs.registerPartials('views/partials');
 hbs.registerHelper('getCurrentDate', () => new Date().getFullYear());
@@ -46,4 +47,4 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.listen(config.app.port, () => console.log(`Server is running on port ${config.app.port}`));
+app.listen(port, () => console.log(`Server is running on port ${port}`));

@@ -47,4 +47,10 @@ app.get('/about', (req, res) => {
     });
 });
 
+app.get('/portfolio', (req, res) =>  {
+    res.render('portfolio', {
+        currentPage: 'Portfolio'
+    });
+});
+
 app.listen(port, () => console.log(`Server is running on port ${port}`));
